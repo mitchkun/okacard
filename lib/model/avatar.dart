@@ -36,7 +36,7 @@ class AvatarState extends State<Avatar> {
       const SizedBox(
         height: 2,
       ),
-      Text("User ${widget.avatarStr}")
+      Text("User ${widget.avatarStr + 1}")
     ]);
   }
 }
