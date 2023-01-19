@@ -9,15 +9,23 @@ class AppBarContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Row(
             children: <Widget>[
-              const Icon(
-                Icons.menu,
-                color: Colors.black,
-                size: 32.0,
+              IconButton(
+                alignment: Alignment.bottomCenter,
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                  size: 36.0,
+                ),
+                onPressed: () {},
               ),
-              Image.asset('assets/images/banner_logo_black.png', height: 50),
+              Container(
+                child: Center(
+                    child: Image.asset('assets/images/banner_logo_black.png',
+                        height: 40)),
+              ),
               const Spacer(),
               IconButton(
                 alignment: Alignment.centerRight,

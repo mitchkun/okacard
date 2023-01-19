@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: const Size.fromHeight(55.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
