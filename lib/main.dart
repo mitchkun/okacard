@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-                color: Colors.black,
+                color: Colors.white,
                 image: DecorationImage(
                     image: AssetImage('assets/images/bg_logo.png'),
                     opacity: 0.1,
