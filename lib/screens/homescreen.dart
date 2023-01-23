@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:okacard/model/avatar.dart';
-
+import 'package:checkmark/checkmark.dart';
 import 'package:okacard/widgets/appbar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  HomeScreenState createState() => HomeScreenState();
+}
+
+class HomeScreenState extends State<HomeScreen> {
+  bool checked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +40,12 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                 ),
               ),
-              Center(child: _CardWidget()),
+              Center(
+                  child: InkWell(
+                      onTap: () {
+                        ScanDialog();
+                      },
+                      child: _CardWidget())),
               const SizedBox(
                 height: 20,
               ),
@@ -51,6 +62,67 @@ class HomeScreen extends StatelessWidget {
             ])
         // ),
         );
+  }
+
+  ScanDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return Dialog(
+          elevation: 50.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          child: Wrap(
+            children: [
+              Center(
+                child: Container(
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // CircularProgressIndicator(),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            checked = !checked;
+                          });
+                        },
+                        child: SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: CheckMark(
+                            active: checked,
+                            curve: Curves.decelerate,
+                            duration: const Duration(milliseconds: 500),
+                          ),
+                        ),
+                      ),
+
+                      Text(
+                        'Scanning',
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.w400,
+                        ), //Textstyle
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+    // Future.delayed(Duration(seconds: 4), () {
+    //   setState(() {
+    //     checked = !checked;
+    //   });
+    // });
   }
 
   Widget _CardWidget() {
