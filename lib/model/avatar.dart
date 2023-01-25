@@ -13,8 +13,8 @@ class Avatar extends StatefulWidget {
 
 class AvatarState extends State<Avatar> {
   static const List<String> urls = [
-    "https://www.gravatar.com/avatar/00000000000000000000000000000000",
-    "https://mitch-codes.com/img/profile.png",
+    "https://gravatar.com/avatar/17f2aaf83563cc792954abad7e3b9bc2?s=400&d=robohash&r=x",
+    "https://gravatar.com/avatar/6e7db8b5e40de27a6c8087b27b0e10f0?s=400&d=robohash&r=x",
     "https://media.licdn.com/dms/image/C4D03AQGVMxKtGo8d1Q/profile-displayphoto-shrink_200_200/0/1583928044629?e=1679529600&v=beta&t=WPxNmDaVtJ9ACGc9PCtEAfFO54rg00oZ5c1WtdsGg7M"
   ];
 
