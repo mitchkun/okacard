@@ -78,29 +78,31 @@ class AppBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 55,
-      height: 55,
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: kAppPrimaryColor,
-          boxShadow: [
-            BoxShadow(
-              color: kLightBlack,
-              offset: Offset(1, 1),
-              blurRadius: 10,
-            ),
-            BoxShadow(
-              color: kWhite,
-              offset: Offset(-1, -1),
-              blurRadius: 10,
-            ),
-          ]),
-      child: Icon(
-        icon,
-        color: fCL,
-      ),
-    );
+    return GestureDetector(
+        onTap: () => Navigator.of(context).pop(),
+        child: Container(
+          width: 55,
+          height: 55,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: kAppPrimaryColor,
+              boxShadow: [
+                BoxShadow(
+                  color: kLightBlack,
+                  offset: Offset(1, 1),
+                  blurRadius: 10,
+                ),
+                BoxShadow(
+                  color: kWhite,
+                  offset: Offset(-1, -1),
+                  blurRadius: 10,
+                ),
+              ]),
+          child: Icon(
+            icon,
+            color: fCL,
+          ),
+        ));
   }
 }
 
